@@ -36,7 +36,7 @@
 
 /*HOMEPAGE*/
 .hero-image {
-  background-image: url("/assets/rose-petals.jpg");
+  background-image: asset-url("rose-petals.jpg");
   background-position: top;
   height: 90vh;
 }
