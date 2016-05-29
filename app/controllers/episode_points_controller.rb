@@ -1,54 +1,10 @@
 class EpisodePointsController < ApplicationController
-  before_action :set_episode_point, only: [:show, :edit, :update, :destroy]
+  before_action :set_episode_point, only: [:destroy]
 
   # GET /episode_points
   # GET /episode_points.json
   def index
     @episode_points_by_contestant = EpisodePoint.all.order(episode_number: :desc, contestant_id: :asc).group_by(&:contestant_id)
-  end
-
-  # GET /episode_points/1
-  # GET /episode_points/1.json
-  def show
-  end
-
-  # GET /episode_points/new
-  def new
-    @episode_point = EpisodePoint.new
-  end
-
-  # GET /episode_points/1/edit
-  def edit
-  end
-
-  # POST /episode_points
-  # POST /episode_points.json
-  def create
-    @episode_point = EpisodePoint.new(episode_point_params)
-
-    respond_to do |format|
-      if @episode_point.save
-        format.html { redirect_to @episode_point, notice: 'Episode point was successfully created.' }
-        format.json { render :show, status: :created, location: @episode_point }
-      else
-        format.html { render :new }
-        format.json { render json: @episode_point.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /episode_points/1
-  # PATCH/PUT /episode_points/1.json
-  def update
-    respond_to do |format|
-      if @episode_point.update(episode_point_params)
-        format.html { redirect_to @episode_point, notice: 'Episode point was successfully updated.' }
-        format.json { render :show, status: :ok, location: @episode_point }
-      else
-        format.html { render :edit }
-        format.json { render json: @episode_point.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # DELETE /episode_points/1

@@ -7,36 +7,6 @@ class ContestantsController < ApplicationController
     @contestants = Contestant.all
   end
 
-  # GET /contestants/1
-  # GET /contestants/1.json
-  def show
-  end
-
-  # GET /contestants/new
-  def new
-    @contestant = Contestant.new
-  end
-
-  # GET /contestants/1/edit
-  def edit
-  end
-
-  # POST /contestants
-  # POST /contestants.json
-  def create
-    @contestant = Contestant.new(contestant_params)
-
-    respond_to do |format|
-      if @contestant.save
-        format.html { redirect_to @contestant, notice: 'Contestant was successfully created.' }
-        format.json { render :show, status: :created, location: @contestant }
-      else
-        format.html { render :new }
-        format.json { render json: @contestant.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # PATCH/PUT /contestants/1
   # PATCH/PUT /contestants/1.json
   def update
