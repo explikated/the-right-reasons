@@ -41,9 +41,6 @@ class ContestantsController < ApplicationController
   # PATCH/PUT /contestants/1.json
   def update
     respond_to do |format|
-      puts "DEBUGGGGGGG"
-      puts params
-      puts contestant_params
       if @contestant.update(contestant_params)
         format.html { redirect_to @contestant, notice: 'Contestant was successfully updated.' }
         format.json { render :show, status: :ok, location: @contestant }
