@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  root "static_pages#homepage"
+
   resources :episode_points
-  root "contestants#index"
 
   resources :teams
+
+  resources :leagues
   
   resources :contestants do
     get 'add_points', on: :member
