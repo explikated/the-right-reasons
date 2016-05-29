@@ -1,7 +1,7 @@
 task :create_users do
   require File.expand_path('../../../config/environment', __FILE__)
 
-  user_names = ["Kate D.", "Chris M.", "Scott T."]
+  user_names = ["Steven","Erin B.","Maeve","Chanel","Ben","Lauren G.","Kristie","Jonathan","Kate","Scott","Chris","Amanda H.","Meaghan","Tara","Courtney","Christine","Natalie","Rachel","Erin E.","Debbie"]
 
   user_names.each do |name|
     User.create(name: name)
@@ -56,7 +56,7 @@ task :create_league_and_teams do
 
   team_info = [
     ["Steven", ["Chad","Derek","Grant","Jordan","Nick S.","Wells","Will"]],
-    ["Erin B", ["Chad","Derek","James S.","Jordan","Luke","Robby","Wells"]],
+    ["Erin B.", ["Chad","Derek","James S.","Jordan","Luke","Robby","Wells"]],
     ["Maeve", ["Ali","Chase","Derek","Grant","Jordan","Luke","Robby"]],
     ["Chanel", ["Chad","Chase","Derek","James S.","Jordan","Robby","Sal"]],
     ["Ben", ["Chase","Derek","Daniel","Grant","Nick S.","Sal","Wells"]],
@@ -66,14 +66,14 @@ task :create_league_and_teams do
     ["Kate", ["Chad","Grant","James S.","Jordan","Luke","Nick B.","Wells"]],
     ["Scott", ["Chase","Christian","Grant","Jordan","Luke","Robby","Wells"]],
     ["Chris", ["Alex","Christian","James S.","Jordan","Luke","Robby","Wells"]],
-    ["Amanda H", ["Alex","Chase","Derek","Grant","Robby","Wells","Will"]],
+    ["Amanda H.", ["Alex","Chase","Derek","Grant","Robby","Wells","Will"]],
     ["Meaghan", ["Brandon","Chase","Daniel","Evan","Luke","Peter","Robby"]],
     ["Tara", ["Alex","Chad","Grant","James Taylor","Jordan","Luke","Robby"]],
     ["Courtney", ["Brandon","Chad","Chase","Coley","Evan","James F.","Vinny"]],
     ["Christine", ["Chad","Daniel","Grant","Jake","Peter","Robby","Will"]],
     ["Natalie", ["Christian","James S.","Jordan","Luke","Nick B.","Sal","Vinny"]],
     ["Rachel", ["Chad","Chase","Derek","James S.","Jordan","Robby","Will"]],
-    ["Erin E", ["Chad","Chase","Derek","Jordan","Luke","Robby","Wells"]],
+    ["Erin E.", ["Chad","Chase","Derek","Jordan","Luke","Robby","Wells"]],
     ["Debbie", ["Chad","Christian","Daniel","Grant","Jordan","Peter","Sal"]]
     ]
 
