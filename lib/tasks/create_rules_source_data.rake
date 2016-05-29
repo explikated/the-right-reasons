@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 task :create_rules do
   require File.expand_path('../../../config/environment', __FILE__)
 
