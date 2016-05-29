@@ -1,17 +1,17 @@
 h1.text-center Points Breakdown
+.row
+  .col-md-10.col-md-offset-1
+    table.table
+      tbody
+        - @episode_points_by_contestant.each do |episode_point_contestant|
+          - contestant = Contestant.find episode_point_contestant[0]
+          tr[id="contestant_#{contestant.id}" class="#{current_status_class(contestant)}"]
+            td colspan="5" <strong>#{contestant.name}</strong>, #{contestant.age}, #{contestant.occupation}
+          - episode_point_contestant[1].each do |episode_point|
+            tr
+              td.col-md-2
+              td.col-md-1  Ep #{episode_point.episode_number}
+              td.col-md-5 = episode_point.scoring_rule.description
+              td.col-md-2 = episode_point.scoring_rule.points
+              td.col-md-1 = link_to 'Delete', episode_point, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-table.table
-  tbody
-    - @episode_points_by_contestant.each do |episode_point_contestant|
-      - contestant = Contestant.find episode_point_contestant[0]
-      tr.info[id="contestant_#{contestant.id}"]
-        td colspan="5" #{contestant.name}, #{contestant.age}, #{contestant.occupation}
-      - episode_point_contestant[1].each do |episode_point|
-        tr
-          td
-          td  Ep #{episode_point.episode_number}
-          td = episode_point.scoring_rule.description
-          td = episode_point.scoring_rule.points
-          td = link_to 'Delete', episode_point, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br

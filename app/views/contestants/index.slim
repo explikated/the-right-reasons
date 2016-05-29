@@ -9,7 +9,7 @@ table.table
 
   tbody
     - @contestants.each do |contestant|
-      tr
+      tr[class="#{current_status_class(contestant)}"]
         td = contestant.name
         td = contestant.age
         td = contestant.occupation

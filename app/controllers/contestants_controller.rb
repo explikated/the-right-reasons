@@ -4,7 +4,7 @@ class ContestantsController < ApplicationController
   # GET /contestants
   # GET /contestants.json
   def index
-    @contestants = Contestant.all
+    @contestants = Contestant.all.order(:name)
   end
 
   # PATCH/PUT /contestants/1
@@ -12,11 +12,9 @@ class ContestantsController < ApplicationController
   def update
     respond_to do |format|
       if @contestant.update(contestant_params)
-        format.html { redirect_to @contestant, notice: 'Contestant was successfully updated.' }
-        format.json { render :show, status: :ok, location: @contestant }
+        format.html { redirect_to contestants_path, notice: '#{@contestant.name} was successfully updated.' }
       else
         format.html { render :edit }
-        format.json { render json: @contestant.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -33,6 +31,6 @@ class ContestantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contestant_params
-      params.require(:contestant).permit(:name, :age, :occupation, episode_points_attributes: [:id, :episode_number, :scoring_rule_id])
+      params.require(:contestant).permit(:name, :age, :occupation, :eliminated_episode, episode_points_attributes: [:id, :episode_number, :scoring_rule_id])
     end
 end
