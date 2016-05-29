@@ -29,11 +29,8 @@ gem 'spring',        group: :development
 # Added
 gem 'annotate'
 gem 'awesome_print'
-<<<<<<< HEAD
 gem 'bootstrap-sass'
-=======
 gem "slim-rails"
->>>>>>> 2c3a1cd4cfaa9f7d68a9e0fc4e88fc2e57a27e61
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

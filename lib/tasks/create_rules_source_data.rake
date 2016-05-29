@@ -38,7 +38,7 @@
 ['Being selected to go on a one-on-one date',20]
 ['Being selected to go on a two-on-one date',30]
 ['Getting the rose to stay another week',25]
-['Getting the rose on a group date',now worth 35]
+['Getting the rose on a group date',35]
 ['Getting the rose on a two-on-one date',40]
 ['Making it to Hometown Dates',50]
 ['Accepting the Fantasy Suite',75]
