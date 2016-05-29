@@ -1,0 +1,11 @@
+p#notice = notice
+
+p
+  <strong>User: </strong>
+  = @team.user.name
+
+p
+  <strong>Name: </strong>
+  = @team.name 
+
+= line_chart points_per_episode_charts_path(team_id: @team.id), discrete: true, xtitle: "Episode", ytitle: "Points"

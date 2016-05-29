@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   resources :teams
 
   resources :users
+
+  resources :charts do
+    get :points_per_episode, on: :collection
+  end
 end

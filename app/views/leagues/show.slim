@@ -1,6 +1,7 @@
 h1.text-center = @league.name
 .row
   .col-md-10.col-md-offset-1
+    = line_chart points_per_episode_charts_path(league_id: @league.id), discrete: true, xtitle: "Episode", ytitle: "Points"
     table.table.table-striped
       thead
         tr
@@ -20,5 +21,5 @@ h1.text-center = @league.name
                   li[class="#{current_status_text_class(contestant)}"] = link_to contestant.name, episode_points_path(anchor: "contestant_#{contestant.id}")
             td = team.current_score
             td = team.contestants.still_in.count
-            td = link_to "Detailed Scoring", "/"
+            td = link_to "Detailed Scoring", team_path(team)
     br
