@@ -1,19 +1,20 @@
 # == Schema Information
 #
-# Table name: users
+# Table name: teams
 #
 #  id         :integer          not null, primary key
-#  first_name :string(255)
+#  user_id    :integer
+#  name       :string(255)
 #  created_at :datetime
 #  updated_at :datetime
-#  age        :integer          default(26)
-#  occupation :string(255)      default("Software Salesman")
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  first_name: MyString
+  user_id: 1
+  name: MyString
 
 two:
-  first_name: MyString
+  user_id: 1
+  name: MyString

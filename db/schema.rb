@@ -11,15 +11,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160528232924) do
+ActiveRecord::Schema.define(version: 20160529003716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contestant_teams", force: true do |t|
+    t.integer  "team_id"
+    t.string   "contestant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "contestants", force: true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.string   "occupation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "league_users", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "league_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "leagues", force: true do |t|
+    t.string   "name"
+    t.integer  "season_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "seasons", force: true do |t|
+    t.integer  "number"
+    t.string   "star_name"
+    t.integer  "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "teams", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "age",        default: 26
+    t.string   "occupation", default: "Software Salesman"
   end
 
 end
