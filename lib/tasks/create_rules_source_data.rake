@@ -51,6 +51,6 @@ task :create_rules do
     ['Winning the Final Rose',100]
   ]
   rules_info.each do |rule_info|
-    Rule.create(description: rule_info[0], points: rule_info[1])
+    ScoringRule.create(description: rule_info[0], points: rule_info[1])
   end
 end
