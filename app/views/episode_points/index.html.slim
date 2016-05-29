@@ -1,15 +1,20 @@
 h1 Listing episode_points
 
-table
+table.table
   thead
     tr
-      th
-      th
-      th
+      th Episode
+      th Contestant
+      th Rule
+      th Points
 
   tbody
     - @episode_points.each do |episode_point|
       tr
+        td = episode_point.episode_number
+        td = episode_point.contestant.name
+        td = episode_point.scoring_rule.description
+        td = episode_point.scoring_rule.points
         td = link_to 'Show', episode_point
         td = link_to 'Edit', edit_episode_point_path(episode_point)
         td = link_to 'Destroy', episode_point, data: {:confirm => 'Are you sure?'}, :method => :delete
