@@ -55,10 +55,27 @@ task :create_league_and_teams do
   end
 
   team_info = [
-    ["Kate D.", ["Chase", "Jordan", "Grant", "Wells", "James S."]],
-    ["Chris M.", ["Chase", "Jake", "Chad", "Wells", "Christian"]],
-    ["Scott T.", ["Robby", "Jordan", "Evan", "Coley", "James S."]]
-  ]
+    ["Steven", ["Chad","Derek","Grant","Jordan","Nick S.","Wells","Will"]],
+    ["Erin B", ["Chad","Derek","James S.","Jordan","Luke","Robby","Wells"]],
+    ["Maeve", ["Ali","Chase","Derek","Grant","Jordan","Luke","Robby"]],
+    ["Chanel", ["Chad","Chase","Derek","James S.","Jordan","Robby","Sal"]],
+    ["Ben", ["Chase","Derek","Daniel","Grant","Nick S.","Sal","Wells"]],
+    ["Lauren G.", ["Alex","Ali","Chad","James F.","Jordan","Luke","Nick B."]],
+    ["Kristie", ["Chad","Grant","James S.","Jordan","Luke","Robby","Wells"]],
+    ["Jonathan", ["Brandon","Jake","Jonathan","Jordan","Nick S.","Robby","Vinny"]],
+    ["Kate", ["Chad","Grant","James S.","Jordan","Luke","Nick B.","Wells"]],
+    ["Scott", ["Chase","Christian","Grant","Jordan","Luke","Robby","Wells"]],
+    ["Chris", ["Alex","Christian","James S.","Jordan","Luke","Robby","Wells"]],
+    ["Amanda H", ["Alex","Chase","Derek","Grant","Robby","Wells","Will"]],
+    ["Meaghan", ["Brandon","Chase","Daniel","Evan","Luke","Peter","Robby"]],
+    ["Tara", ["Alex","Chad","Grant","James Taylor","Jordan","Luke","Robby"]],
+    ["Courtney", ["Brandon","Chad","Chase","Coley","Evan","James F.","Vinny"]],
+    ["Christine", ["Chad","Daniel","Grant","Jake","Peter","Robby","Will"]],
+    ["Natalie", ["Christian","James S.","Jordan","Luke","Nick B.","Sal","Vinny"]],
+    ["Rachel", ["Chad","Chase","Derek","James S.","Jordan","Robby","Will"]],
+    ["Erin E", ["Chad","Chase","Derek","Jordan","Luke","Robby","Wells"]],
+    ["Debbie", ["Chad","Christian","Daniel","Grant","Jordan","Peter","Sal"]]
+    ]
 
   team_info.each do |row|
     user = User.find_by_name(row[0])
