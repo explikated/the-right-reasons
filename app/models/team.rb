@@ -20,4 +20,9 @@ class Team < ActiveRecord::Base
   def add_contestant contestant
     ContestantTeam.create(team_id: self.id, contestant_id: contestant.id)
   end
+
+  def current_score
+    EpisodePoint.contestants(contestants.pluck(:id)).joins(:scoring_rule).sum(:points)
+  end
+
 end
