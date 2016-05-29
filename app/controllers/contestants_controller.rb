@@ -52,6 +52,7 @@ class ContestantsController < ApplicationController
   end
 
   def add_points
+    @episode_number = @contestant.episode_points.maximum(:episode_number).to_i + 1
   end
 
   private
@@ -62,6 +63,6 @@ class ContestantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contestant_params
-      params.require(:contestant).permit(:name, :age, :occupation)
+      params.require(:contestant).permit(:name, :age, :occupation, episode_points_attributes: [:id, :description, :rule_id])
     end
 end

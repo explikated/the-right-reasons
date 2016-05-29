@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: rules
+# Table name: scoring_rules
 #
 #  id          :integer          not null, primary key
 #  points      :integer
@@ -10,5 +10,8 @@
 #  updated_at  :datetime
 #
 
-class Rule < ActiveRecord::Base
+class ScoringRule < ActiveRecord::Base
+
+  has_many :episode_points
+
 end
