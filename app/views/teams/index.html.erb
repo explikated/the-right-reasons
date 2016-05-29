@@ -1,6 +1,6 @@
 <h1>Listing teams</h1>
 
-<table class="table">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>User</th>
@@ -13,7 +13,7 @@
     <% @teams.each do |team| %>
       <tr>
         <td><%= team.user_id %></td>
-        <td><%= team.name %></td>
+        <td><%= team.user.name %></td>
         <td><%= link_to 'Show', team %></td>
         <td><%= link_to 'Edit', edit_team_path(team) %></td>
         <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
