@@ -15,6 +15,6 @@ class EpisodePoint < ActiveRecord::Base
   belongs_to :contestant
   belongs_to :scoring_rule, :class_name => "ScoringRule"
 
-  delegate :points, to: :scoring_rule
+  scope :contestants, ->(ids)  { where(contestant_id: ids) }
 
 end
