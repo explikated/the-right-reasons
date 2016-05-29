@@ -1,20 +1,17 @@
-h1 Listing episode_points
+h1.text-center Points Breakdown
 
 table.table
-  thead
-    tr
-      th Episode
-      th Contestant
-      th Rule
-      th Points
-
   tbody
-    - @episode_points.each do |episode_point|
-      tr
-        td = episode_point.episode_number
-        td = episode_point.contestant.name
-        td = episode_point.scoring_rule.description
-        td = episode_point.scoring_rule.points
-        td = link_to 'Delete', episode_point, data: {:confirm => 'Are you sure?'}, :method => :delete
+    - @episode_points_by_contestant.each do |episode_point_contestant|
+      - contestant = Contestant.find episode_point_contestant[0]
+      tr.info[id="contestant_#{contestant.id}"]
+        td colspan="5" #{contestant.name}, #{contestant.age}, #{contestant.occupation}
+      - episode_point_contestant[1].each do |episode_point|
+        tr
+          td
+          td  Ep #{episode_point.episode_number}
+          td = episode_point.scoring_rule.description
+          td = episode_point.scoring_rule.points
+          td = link_to 'Delete', episode_point, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br

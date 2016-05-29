@@ -1,0 +1,11 @@
+.row
+  .col-md-8.col-md-offset-2.col-xs-12.text-center
+    p Find your league, find true love.
+    - @leagues.each do |league|
+      .row
+        .col-md-10.col-md-offset-1.col-xs-12
+          hr
+          .pull-left 
+            h3 = league.name
+            p #{league.users.count} players
+          .pull-right= link_to "View", league_path(league), class: "btn btn-primary btn-lg margin-top-md"

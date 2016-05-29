@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :episode_points
 
-  resources :leagues, only: [:index]
+  resources :leagues, only: [:index, :show]
 
   resources :teams
 

@@ -13,5 +13,5 @@ table.table
         td = contestant.name
         td = contestant.age
         td = contestant.occupation
-        td = link_to 'Show', contestant
+        td = link_to 'See Points', episode_points_path(anchor: "contestant_#{contestant.id}")
         td = link_to 'Add Points', add_points_contestant_path(contestant)
