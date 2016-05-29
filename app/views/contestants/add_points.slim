@@ -3,10 +3,8 @@ h1 Add Points for #{@contestant.name}
 
 = form_for @contestant do |f|
   = f.fields_for :episode_points, [EpisodePoint.new]*7 do |episode_point|
-    .form-group
-      = episode_point.number_field :episode_number, value: @episode_number
-    .form-group
-      = episode_point.collection_select :scoring_rule_id, ScoringRule.all, :id, :description, include_blank: true
-    hr
+    .form-group.row.form-inline
+      .col-xs-2 = episode_point.number_field :episode_number, value: @episode_number, class: "form-control col-xs-2"
+      .col-xs-8 = episode_point.collection_select :scoring_rule_id, ScoringRule.all, :id, :description, {include_blank: true}, {class: "form-control col-xs-8"}
   .form-group
-    = f.submit
+    = f.submit class: "btn btn-primary"
