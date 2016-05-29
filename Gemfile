@@ -31,6 +31,7 @@ gem 'annotate'
 gem 'awesome_print'
 gem 'bootstrap-sass'
 gem "slim-rails"
+gem 'rails_serve_static_assets'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
