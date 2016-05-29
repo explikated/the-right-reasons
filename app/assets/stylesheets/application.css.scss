@@ -16,6 +16,7 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import url(https://fonts.googleapis.com/css?family=La+Belle+Aurore);
 
  .margin-all-sm {
   margin: 10px;
@@ -31,4 +32,15 @@
 
 .strikethrough {
   text-decoration: line-through;
+}
+
+/*HOMEPAGE*/
+.hero-image {
+  background-image: url("/assets/rose-petals.jpg");
+  background-position: top;
+  height: 90vh;
+}
+.love-note {
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 96px;
 }

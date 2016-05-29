@@ -1,4 +1,4 @@
 .row
-  .col-md-12.text-center
-    .h1 ARE YOU HERE FOR THE RIGHT REASONS!?!?!
-    = link_to "I'm here for love", leagues_path(), class: "btn btn-primary btn-lg"
+  .col-md-12.text-center.hero-image
+    .love-note Are you here for <br>the right reasons?
+    = link_to "I'm here for #{Season.current_season.star_name.titleize}! 100%", leagues_path(), class: "btn btn-danger btn-lg"
