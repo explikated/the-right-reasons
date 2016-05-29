@@ -4,7 +4,7 @@
 #
 #  id            :integer          not null, primary key
 #  team_id       :integer
-#  contestant_id :string(255)
+#  contestant_id :integer
 #  created_at    :datetime
 #  updated_at    :datetime
 #

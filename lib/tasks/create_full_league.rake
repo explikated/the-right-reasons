@@ -44,3 +44,31 @@ task :create_contestants do
     Contestant.create(name: contestant[0], age: contestant[1], occupation: contestant[2])
   end
 end
+
+task :create_league_and_teams do
+  require File.expand_path('../../../config/environment', __FILE__)
+
+  league = League.create(name: "Rocksbox & Friends")
+
+  User.first(10).each do |user|
+    user.join_league league
+  end
+
+  team_info = [
+    ["Kate D.", ["Chase", "Jordan", "Grant", "Wells", "James S."]],
+    ["Chris M.", ["Chase", "Jake", "Chad", "Wells", "Christian"]],
+    ["Scott T.", ["Robby", "Jordan", "Evan", "Coley", "James S."]]
+  ]
+
+  team_info.each do |row|
+    user = User.find_by_name(row[0])
+    team = user.create_team(league)
+
+    contestant_names = row[1]
+    contestant_names.each do |name|
+      contestant = Contestant.find_by_name(name)
+      team.add_contestant contestant
+    end
+  end
+
+end

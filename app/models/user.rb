@@ -12,4 +12,16 @@
 
 class User < ActiveRecord::Base
 
+  has_many :league_users, :dependent => :destroy
+  has_many :leagues, through: :league_users
+
+  has_many :teams
+
+  def join_league league
+    LeagueUser.create(user_id: self.id, league_id: league.id)
+  end
+
+  def create_team league
+    self.teams.create(league_id: league.id)
+  end
 end
