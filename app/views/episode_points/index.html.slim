@@ -15,10 +15,6 @@ table.table
         td = episode_point.contestant.name
         td = episode_point.scoring_rule.description
         td = episode_point.scoring_rule.points
-        td = link_to 'Show', episode_point
-        td = link_to 'Edit', edit_episode_point_path(episode_point)
-        td = link_to 'Destroy', episode_point, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Delete', episode_point, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
-
-= link_to 'New Episode point', new_episode_point_path
