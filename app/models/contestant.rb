@@ -19,4 +19,6 @@ class Contestant < ActiveRecord::Base
   has_many :episode_points
   accepts_nested_attributes_for :episode_points, :reject_if => lambda { |ep| ep[:scoring_rule_id].blank? }
 
+  scope :still_in, -> { where(eliminated_episode: nil) }
+
 end

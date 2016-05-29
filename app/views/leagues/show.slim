@@ -1,19 +1,24 @@
 h1.text-center = @league.name
+.row
+  .col-md-10.col-md-offset-1
+    table.table.table-striped
+      thead
+        tr
+          th User
+          th Contestants
+          th Current Score
+          th Remaining Contestants
+          th
 
-table.table.table-striped
-  thead
-    tr
-      th User
-      th Contestants
-      th Current Score
-
-  tbody
-    - @teams.each do |team|
-      tr
-        td= team.user.name
-        td
-          ul
-            - team.contestant_teams.each do |contestants|
-              li = contestants.contestant.name
-        td = team.current_score
-br
+      tbody
+        - @teams.each do |team|
+          tr
+            td= team.user.name
+            td
+              ul
+                - team.contestants.each do |contestant|
+                  li[class="#{current_status_text_class(contestant)}"] = link_to contestant.name, episode_points_path(anchor: "contestant_#{contestant.id}")
+            td = team.current_score
+            td = team.contestants.still_in.count
+            td = link_to "Detailed Scoring", "/"
+    br
