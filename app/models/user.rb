@@ -3,7 +3,7 @@
 # Table name: users
 #
 #  id         :integer          not null, primary key
-#  first_name :string(255)
+#  name       :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #  age        :integer          default(26)
@@ -11,4 +11,5 @@
 #
 
 class User < ActiveRecord::Base
+
 end
