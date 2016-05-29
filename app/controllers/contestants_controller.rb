@@ -41,6 +41,9 @@ class ContestantsController < ApplicationController
   # PATCH/PUT /contestants/1.json
   def update
     respond_to do |format|
+      puts "DEBUGGGGGGG"
+      puts params
+      puts contestant_params
       if @contestant.update(contestant_params)
         format.html { redirect_to @contestant, notice: 'Contestant was successfully updated.' }
         format.json { render :show, status: :ok, location: @contestant }
@@ -63,6 +66,6 @@ class ContestantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contestant_params
-      params.require(:contestant).permit(:name, :age, :occupation, episode_points_attributes: [:id, :description, :rule_id])
+      params.require(:contestant).permit(:name, :age, :occupation, episode_points_attributes: [:id, :episode_number, :scoring_rule_id])
     end
 end
