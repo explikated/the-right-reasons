@@ -1,0 +1,17 @@
+h1 Listing contestants
+
+table
+  thead
+    tr
+      th Name
+      th Age
+      th Occupation
+
+  tbody
+    - @contestants.each do |contestant|
+      tr
+        td= contestant.name
+        td = contestant.age
+        td = contestant.occupation
+        td = link_to 'Show', contestant
+        td = link_to 'Add Points', add_points_contestant_path(contestant)

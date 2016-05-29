@@ -1,0 +1,19 @@
+h1 Listing episode_points
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @episode_points.each do |episode_point|
+      tr
+        td = link_to 'Show', episode_point
+        td = link_to 'Edit', edit_episode_point_path(episode_point)
+        td = link_to 'Destroy', episode_point, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Episode point', new_episode_point_path
