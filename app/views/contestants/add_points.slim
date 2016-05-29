@@ -1,0 +1,7 @@
+h1 Add Points for #{@contestant.name}
+
+
+= form_for @contestant do |f|
+  = f.fields_for :episode_points, [ EpisodePoint.new ]*5 do |episode_point|
+    = episode_point.number_field :episode_number
+  = f.submit

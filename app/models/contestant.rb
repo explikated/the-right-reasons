@@ -14,5 +14,8 @@ class Contestant < ActiveRecord::Base
 
   has_many :contestant_teams, :dependent => :destroy
   has_many :teams, through: :contestant_teams
-  
+
+  has_many :episode_points
+  accepts_nested_attributes_for :episode_points, :reject_if => lambda { |ep| ep[:rule_id].blank? }
+
 end

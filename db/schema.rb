@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160529020527) do
+ActiveRecord::Schema.define(version: 20160529030538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,14 @@ ActiveRecord::Schema.define(version: 20160529020527) do
     t.datetime "updated_at"
   end
 
+  create_table "episode_points", force: true do |t|
+    t.integer  "contestant_id"
+    t.integer  "episode_number"
+    t.integer  "rule_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "league_users", force: true do |t|
     t.integer  "user_id"
     t.integer  "league_id"
@@ -41,6 +49,14 @@ ActiveRecord::Schema.define(version: 20160529020527) do
   create_table "leagues", force: true do |t|
     t.string   "name"
     t.integer  "season_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rules", force: true do |t|
+    t.integer  "points"
+    t.text     "description"
+    t.integer  "category"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

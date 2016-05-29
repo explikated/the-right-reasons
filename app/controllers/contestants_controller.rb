@@ -1,5 +1,5 @@
 class ContestantsController < ApplicationController
-  before_action :set_contestant, only: [:show, :edit, :update, :destroy]
+  before_action :set_contestant, only: [:show, :edit, :update, :add_points]
 
   # GET /contestants
   # GET /contestants.json
@@ -51,14 +51,7 @@ class ContestantsController < ApplicationController
     end
   end
 
-  # DELETE /contestants/1
-  # DELETE /contestants/1.json
-  def destroy
-    @contestant.destroy
-    respond_to do |format|
-      format.html { redirect_to contestants_url, notice: 'Contestant was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+  def add_points
   end
 
   private
