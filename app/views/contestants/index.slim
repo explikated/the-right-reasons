@@ -11,7 +11,7 @@ h1.text-center The Lukcy Contestants
       tbody
         - @contestants.each do |contestant|
           tr[class="#{current_status_class(contestant)}"]
-            td.col-md-2 = contestant.name
+            td.col-md-2 = link_to contestant.name, "http://abc.go.com/shows/the-bachelorette/cast/#{contestant.name.parameterize}", target: "_blank"
             td.col-md-1 = contestant.age
             td.col-md-3  = contestant.occupation
             td.col-md-1 = link_to 'See Points', episode_points_path(anchor: "contestant_#{contestant.id}")
