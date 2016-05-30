@@ -26,12 +26,22 @@
   margin: 20px;
  }
 
+ .margin-top-sm {
+  margin-top: 10px;
+ }
+
  .margin-top-md {
   margin-top: 20px;
  }
 
 .strikethrough {
   text-decoration: line-through;
+}
+
+/*NAVBAR*/
+.navbar-brand {
+  font-family: 'La Belle Aurore', cursive;
+  padding-top: 18px;
 }
 
 /*HOMEPAGE*/
