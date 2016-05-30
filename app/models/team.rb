@@ -22,7 +22,7 @@ class Team < ActiveRecord::Base
   end
 
   def current_score
-    EpisodePoint.contestants(contestants.pluck(:id)).joins(:scoring_rule).sum(:points)
+    EpisodePoint.contestants(contestants.pluck(:id)).sum(:points)
   end
 
   scope :winners_first, -> { sort_by(&:current_score).reverse }
