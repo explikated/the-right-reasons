@@ -8,6 +8,7 @@
 #  updated_at :datetime
 #  age        :integer          default(26)
 #  occupation :string(255)      default("Software Salesman")
+#  email      :string(255)      default(""), not null
 #
 
 class User < ActiveRecord::Base
