@@ -24,5 +24,5 @@ class EpisodePoint < ActiveRecord::Base
   end
 
   scope :contestants, ->(ids)  { where(contestant_id: ids) }
-
+  scope :episode, ->(episode_number)  { where(episode_number: episode_number)}
 end

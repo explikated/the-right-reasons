@@ -3,15 +3,20 @@ h1.text-center Points Breakdown
   .col-md-10.col-md-offset-1
     table.table
       tbody
-        - @episode_points_by_contestant.each do |episode_point_contestant|
-          - contestant = Contestant.find episode_point_contestant[0]
+        - @contestants.each do |contestant|
           tr[id="contestant_#{contestant.id}" class="#{current_status_class(contestant)}"]
             td colspan="5" <strong>#{contestant.name}</strong>, #{contestant.age}, #{contestant.occupation}
-          - episode_point_contestant[1].each do |episode_point|
+          - max_episode = @episode_points_by_contestant.maximum(:episode_number)
+          - max_episode.downto(1).each do |episode_number|
+            - points_this_episode = @episode_points_by_contestant.contestants(contestant.id).episode(episode_number)
             tr
-              td.col-md-2
-              td.col-md-1  Ep #{episode_point.episode_number}
-              td.col-md-5 = episode_point.scoring_rule.description
-              td.col-md-2 = episode_point.scoring_rule.points
-              td.col-md-1 = link_to 'Delete', episode_point, data: {:confirm => 'Are you sure?'}, :method => :delete
+              td 
+              td colspan="4" <strong>Ep #{episode_number} total: #{points_this_episode.sum(:points)}</strong>
+            - points_this_episode.each do |point|
+              tr
+                td.col-md-2
+                td.col-md-1  Ep #{episode_number}
+                td.col-md-5 = point.scoring_rule.description
+                td.col-md-2 = point.scoring_rule.points
+                td.col-md-1 = link_to 'Delete', point, data: {:confirm => 'Are you sure?'}, :method => :delete
 
