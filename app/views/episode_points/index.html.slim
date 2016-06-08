@@ -9,14 +9,15 @@ h1.text-center Points Breakdown
           - max_episode = @episode_points_by_contestant.maximum(:episode_number)
           - max_episode.downto(1).each do |episode_number|
             - points_this_episode = @episode_points_by_contestant.contestants(contestant.id).episode(episode_number)
-            tr
-              td 
-              td colspan="4" <strong>Ep #{episode_number} total: #{points_this_episode.sum(:points)}</strong>
-            - points_this_episode.each do |point|
+            - if points_this_episode.any?
               tr
-                td.col-md-2
-                td.col-md-1  Ep #{episode_number}
-                td.col-md-5 = point.scoring_rule.description
-                td.col-md-2 = point.scoring_rule.points
-                td.col-md-1 = link_to 'Delete', point, data: {:confirm => 'Are you sure?'}, :method => :delete
+                td 
+                td colspan="4" <strong>Ep #{episode_number} total: #{points_this_episode.sum(:points)}</strong>
+              - points_this_episode.each do |point|
+                tr
+                  td.col-md-2
+                  td.col-md-1  Ep #{episode_number}
+                  td.col-md-5 = point.scoring_rule.description
+                  td.col-md-2 = point.scoring_rule.points
+                  td.col-md-1 = link_to 'Delete', point, data: {:confirm => 'Are you sure?'}, :method => :delete
 
