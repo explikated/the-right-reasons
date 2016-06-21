@@ -1,5 +1,6 @@
 class EpisodePointsController < ApplicationController
   before_action :set_episode_point, only: [:destroy]
+  before_action :authenticate_user!, only: [:destroy]
 
   # GET /episode_points
   # GET /episode_points.json

@@ -1,5 +1,6 @@
 class ContestantsController < ApplicationController
   before_action :set_contestant, only: [:show, :edit, :update, :add_points]
+  before_action :authenticate_user!, only: [:add_points, :update]
 
   # GET /contestants
   # GET /contestants.json
