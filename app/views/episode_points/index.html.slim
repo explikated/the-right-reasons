@@ -19,5 +19,6 @@ h1.text-center Points Breakdown
                   td.col-md-1  Ep #{episode_number}
                   td.col-md-5 = point.scoring_rule.description
                   td.col-md-2 = point.scoring_rule.points
-                  td.col-md-1 = link_to 'Delete', point, data: {:confirm => 'Are you sure?'}, :method => :delete
+                  - if current_user.present?
+                    td.col-md-1 = link_to 'Delete', point, data: {:confirm => 'Are you sure?'}, :method => :delete
 

@@ -1,4 +1,4 @@
-h1.text-center The Lukcy Contestants
+h1.text-center The Lucky Contestants
 .row
   .col-md-10.col-md-offset-1
     table.table
@@ -15,4 +15,5 @@ h1.text-center The Lukcy Contestants
             td.col-md-1 = contestant.age
             td.col-md-3  = contestant.occupation
             td.col-md-1 = link_to 'See Points', episode_points_path(anchor: "contestant_#{contestant.id}")
-            td.col-md-1 = link_to 'Add Points', add_points_contestant_path(contestant)
+            - if current_user.present?
+              td.col-md-1 = link_to 'Add Points', add_points_contestant_path(contestant)
