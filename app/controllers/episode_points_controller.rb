@@ -4,7 +4,8 @@ class EpisodePointsController < ApplicationController
   # GET /episode_points
   # GET /episode_points.json
   def index
-    @episode_points_by_contestant = EpisodePoint.all.order(episode_number: :desc, contestant_id: :asc).group_by(&:contestant_id)
+    @episode_points_by_contestant = EpisodePoint.all.order(episode_number: :desc, contestant_id: :asc)
+    @contestants = Contestant.all
   end
 
   # DELETE /episode_points/1
