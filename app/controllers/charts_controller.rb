@@ -9,7 +9,7 @@ class ChartsController < ApplicationController
       league = League.find params[:league_id]
       render json: league.teams.map{ |team|
         sum = 0
-        { name: team.user.name, data: EpisodePoint.contestants(team.contestants.pluck(:id)).group(:episode_number).sum(:points).map { |x,y| { x => (sum += y)} }.reduce({}, :merge)}
+        { name: team.user.name, data: EpisodePoint.contestants(team.contestants.pluck(:id)).order(:episode_number).group(:episode_number).sum(:points).map { |x,y| { x => (sum += y)} }.reduce({}, :merge)}
       }
     end
   end
